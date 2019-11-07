@@ -3,7 +3,7 @@ window.onload = function (e) {
         initializeApp(data);
     });
     if ("WebSocket" in window) {
-        var wsURL = "wss://e7e2a27b.ngrok.io?"
+        var wsURL = "wss://e7e2a27b.ngrok.io?user=1"
        // alert("WebSocket is supported by your Browser!");
        
        // Let us open a web socket
