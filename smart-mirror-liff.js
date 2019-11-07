@@ -3,11 +3,11 @@ window.onload = function (e) {
         initializeApp(data);
     });
     if ("WebSocket" in window) {
-        var wsURL = "e7e2a27b.ngrok.io"
+        var wsURL = "wss://e7e2a27b.ngrok.io/"
        // alert("WebSocket is supported by your Browser!");
        
        // Let us open a web socket
-       var ws = new WebSocket("wss://" + wsURL + "liff-client");
+       var ws = new WebSocket(wsURL,"liff-client");
         
        ws.onopen = function() {
           
