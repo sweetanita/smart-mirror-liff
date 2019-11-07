@@ -2,6 +2,45 @@ window.onload = function (e) {
     liff.init(function (data) {
         initializeApp(data);
     });
+    if ("WebSocket" in window) {
+        var wsURL = "e7e2a27b.ngrok.io"
+       // alert("WebSocket is supported by your Browser!");
+       
+       // Let us open a web socket
+       var ws = new WebSocket("wss://" + wsURL + "liff-client");
+        
+       ws.onopen = function() {
+          
+          // Web Socket is connected, send data using send()
+          ws.send("Connected");
+          // alert("Message is sent...");
+       };
+        
+       ws.onmessage = function (evt) { 
+          var received_msg = evt.data;
+          alert("Picture is at: somewhere");
+       };
+        
+       ws.onclose = function() { 
+          
+          // websocket is closed.
+          alert("Connection is closed..."); 
+       };
+           //SMART MIRROR
+        document.getElementById('shutterbutton').addEventListener('click', function () {
+            ws.binaryType = 'arraybuffer';
+            ws.send(new Uint8Array([55]));
+        });
+
+        document.getElementById('pingbutton').addEventListener('click', function () {
+            ws.send("Ping");
+        });
+        //==SMART MIRROR==
+    } else {
+      
+       // The browser doesn't support WebSocket
+       alert("WebSocket NOT supported by your Browser!");
+    }
 };
 
 function initializeApp(data) {
