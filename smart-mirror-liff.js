@@ -7,7 +7,7 @@ window.onload = function (e) {
        // alert("WebSocket is supported by your Browser!");
        
        // Let us open a web socket
-       var ws = new WebSocket(wsURL,"liff-client");
+       var ws = new WebSocket(wsURL, ["liff-client"]);
         
        ws.onopen = function() {
           
