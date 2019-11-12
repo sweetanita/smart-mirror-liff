@@ -13,7 +13,7 @@ window.onload = function (e) {
           
           // Web Socket is connected, send data using send()
           ws.send("Connected");
-          document.getElementById('shutterbutton').display = "block"
+          document.getElementById('shutterbutton').style.display = "block"
           // alert("Message is sent...");
        };
         
@@ -33,9 +33,9 @@ window.onload = function (e) {
             ws.send(new Uint8Array([55]));
         });
 
-        document.getElementById('pingbutton').addEventListener('click', function () {
-            ws.send("Ping");
-        });
+        // document.getElementById('pingbutton').addEventListener('click', function () {
+        //     ws.send("Ping");
+        // });
         //==SMART MIRROR==
     } else {
       
