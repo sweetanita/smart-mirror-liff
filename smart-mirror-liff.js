@@ -13,6 +13,7 @@ window.onload = function (e) {
           
           // Web Socket is connected, send data using send()
           ws.send("Connected");
+          document.getElementById('shutterbutton').display = "block"
           // alert("Message is sent...");
        };
         
