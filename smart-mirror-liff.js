@@ -19,6 +19,7 @@ window.onload = function (e) {
         
        ws.onmessage = function (evt) { 
           var received_msg = evt.data;
+          console.log(received_msg)
           if (received_msg.includes("load")) {
             alert("Processing Picture, Please Wait a moment.");
           }
