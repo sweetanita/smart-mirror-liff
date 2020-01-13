@@ -19,7 +19,7 @@ window.onload = function (e) {
         
        ws.onmessage = function (evt) { 
           var received_msg = evt.data;
-          alert("Picture is at: somewhere");
+          alert(received_msg);
        };
         
        ws.onclose = function() { 
