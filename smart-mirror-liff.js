@@ -19,7 +19,12 @@ window.onload = function (e) {
         
        ws.onmessage = function (evt) { 
           var received_msg = evt.data;
-          alert(received_msg);
+          if (received_msg.includes("load")) {
+            alert("Processing Picture, Please Wait a moment.");
+          }
+          else if (received_msg.includes("line-objects")) {
+            location.href=received_msg;
+          }
        };
         
        ws.onclose = function() { 
