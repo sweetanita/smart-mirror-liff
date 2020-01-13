@@ -22,8 +22,8 @@ window.onload = function (e) {
           if (received_msg.includes("load")) {
             alert("Processing Picture, Please Wait a moment.");
           }
-          else if (received_msg.includes("line-objects")) {
-            location.href=received_msg;
+          else if (received_msg.includes(".jpg")) {
+            location.href= "https://line-objects-dev.com/filedump/pics/" + received_msg;
           }
        };
         
