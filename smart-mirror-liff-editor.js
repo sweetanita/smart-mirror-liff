@@ -16,7 +16,7 @@ window.onload = function (e) {
             // document.getElementById("liffInitErrorMessage").classList.remove('hidden');
         });
     if ("WebSocket" in window) {
-        var wsURL = "wss://cd817695.ngrok.io?user=1"
+        var wsURL = "wss://9cf98b5a.ngrok.io?user=1"
        // alert("WebSocket is supported by your Browser!");
        
        // Let us open a web socket
