@@ -59,6 +59,7 @@ function initializeApp(data) {
   var url = new URL(url_string);
   var pPath = url.searchParams.get("userPic");
   var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
+  console.log(loadImage)
     document.getElementById('userPic').src = loadImage;
   
 
