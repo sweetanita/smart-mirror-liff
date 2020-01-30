@@ -21,10 +21,10 @@ window.onload = function (e) {
           var received_msg = evt.data;
           console.log(received_msg)
           if (received_msg.includes("load")) {
-            alert("Uploading...");
+            alert("Processing Image...");
           }
           else if (received_msg.includes(".jpg")) {
-            location.href = "edit.html?p=" + received_msg;
+            location.href = "edit.html?userPic=" + received_msg;
             // location.href = "https://line-objects-dev.com/filedump/pics/" + received_msg;
           }
        };
@@ -39,7 +39,7 @@ window.onload = function (e) {
             ws.binaryType = 'arraybuffer';
             ws.send(new Uint8Array([55]));
             document.getElementById('shutterbutton').disabled = true;
-            window.alert("Processing Image. Please wait.")
+            window.alert("Smile!")
             document.body.style.filter = 'grayscale(1)';
         });
 

@@ -57,7 +57,7 @@ window.onload = function (e) {
 function initializeApp(data) {
   var url_string = window.location.href
   var url = new URL(url_string);
-  var pPath = url.searchParams.get("p");
+  var pPath = url.searchParams.get("userPic");
     document.getElementById('userPic').src = "https://line-objects-dev.com/filedump/pics/" + pPath;
   
 
