@@ -1,7 +1,20 @@
 window.onload = function (e) {
-    liff.init(function (data) {
-        initializeApp(data);
-    });
+    var myLiffId = '1653359134-GD2RKWnj'
+    // liff.init(function (data) {
+    //     initializeApp(data);
+    // });
+    liff
+        .init({
+            liffId: myLiffId
+        })
+        .then((data) => {
+            // start to use LIFF's api
+            initializeApp(data);
+        })
+        .catch((err) => {
+            // document.getElementById("liffAppContent").classList.add('hidden');
+            // document.getElementById("liffInitErrorMessage").classList.remove('hidden');
+        });
     if ("WebSocket" in window) {
         var wsURL = "wss://cd817695.ngrok.io?user=1"
        // alert("WebSocket is supported by your Browser!");
