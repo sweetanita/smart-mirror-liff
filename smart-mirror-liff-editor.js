@@ -55,6 +55,10 @@ window.onload = function (e) {
 };
 
 function initializeApp(data) {
+  var url_string = window.location.href
+  var url = new URL(url_string);
+  var pPath = url.searchParams.get("p");
+    document.getElementById('userPic').src = "https://line-objects-dev.com/filedump/pics/" + pPath;
   
 
     // openWindow call
