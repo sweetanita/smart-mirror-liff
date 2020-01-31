@@ -30,14 +30,34 @@
 
     <div class="btn-group" role="group">
         <div class="buttonrow">
-            <button id="shutterbutton" class="btn btn-success btn-lg" style="display: none;">Cheese!</button>
+            <center> <button id="shutterbutton" class="btn btn-success btn-lg" style="display: none;">Cheese!</button> </center>
 <!--             <button id="pingbutton" class="btn btn-primary">Ping</button> -->
         </div>
     </div>
     <div>
-        <img id="userPic" src=""></img>
+       <center> <img id="userPic" src=""></img> </center>
     </div>
+    <!-- <button id="lineShare" class="btn btn-success btn-lg" style="display: none;">LINE</button> -->
+    <!-- <button id="fbShare" class="btn btn-primary btn-lg" style="display: none;">Facebook</button> -->
+<!--     <div class="line-it-button" data-lang="en" data-type="share-b" data-ver="3" data-url=loadImage data-color="default" data-size="large" data-count="false" style="display: none;" id="lineShare"></div>
+
+    <div class="fb-share-button" data-href=loadImage data-layout="button" data-size="large"><a target="_blank" href=loadImage class="fb-xfbml-parse-ignore" id="fbShare">Share</a></div> -->
+
+    <!-- <button id="igShare" class="btn btn-warning btn-lg" style="display: none;">Instagram</button> -->
 
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script src="smart-mirror-liff-editor.js"></script>
+   
+<!--     <script>
+          var url_string = window.location.href
+  var url = new URL(url_string);
+  var pPath = url.searchParams.get("userPic");
+  var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
+
+   document.getElementById('fbShare').href = "https://www.facebook.com/sharer/sharer.php?src=sdkpreparse&amp;u=" + loadImage
+   document.getElementById('fbShare').setAttribute("data-href", loadImage)
+   document.getElementById('lineShare').setAttribute("data-url", loadImage)
+    </script> -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
+ <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 </body>

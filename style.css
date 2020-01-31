@@ -43,3 +43,7 @@ img {
 button {
     margin: 16px;
 }
+
+body {
+    background-color: black;
+}

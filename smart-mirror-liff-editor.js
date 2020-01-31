@@ -1,5 +1,6 @@
 window.onload = function (e) {
     var myLiffId = '1653359134-GD2RKWnj'
+    initializeApp(0 );
     // liff.init(function (data) {
     //     initializeApp(data);
     // });
@@ -30,7 +31,7 @@ window.onload = function (e) {
           
           // Web Socket is connected, send data using send()
           ws.send("Connected");
-          document.getElementById('shutterbutton').style.display = "block"
+          // document.getElementById('shutterbutton').style.display = "block"
           // alert("Message is sent...");
        };
         
@@ -76,9 +77,49 @@ function initializeApp(data) {
   var url = new URL(url_string);
   var pPath = url.searchParams.get("userPic");
   var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
+
+  var divLINE = document.createElement('div');
+// divLINE.textContent = "Sup, y'all?";
+divLINE.setAttribute('class', 'line-it-button');
+divLINE.setAttribute('data-lang', 'en');
+divLINE.setAttribute('data-type', 'share-c');
+divLINE.setAttribute('data-ver', '3');
+divLINE.setAttribute('data-url', loadImage.toString());
+divLINE.setAttribute('data-color', 'default');
+divLINE.setAttribute('data-size', 'large');
+divLINE.setAttribute('data-count', 'false');
+divLINE.style.width = "10%";
+divLINE.style.height = "10%";
+divLINE.style.display = "none";
+
+document.body.appendChild(divLINE);
+
+
+var divFBroot = document.createElement('div');
+divFBroot.setAttribute('id', 'fb-root');
+
+var divFB = document.createElement('div');
+// divFB.textContent = "Share";
+divFB.setAttribute('class', 'fb-share-button');
+divFB.setAttribute('data-href', loadImage);
+divFB.setAttribute('data-layout', 'button');
+divFB.setAttribute('data-size', 'large');
+
+var aFB = document.createElement('a');
+aFB.textContent = "Share";
+aFB.setAttribute('target', '_blank');
+aFB.setAttribute('href', loadImage);
+aFB.setAttribute('class', 'fb-xfbml-parse-ignore');
+divFB.appendChild(aFB);
+document.body.appendChild(divFBroot);
+document.body.appendChild(divFB);
+
+   // document.getElementById('fbShare').href = "https://www.facebook.com/sharer/sharer.php?src=sdkpreparse&amp;u=" + loadImage
+   // document.getElementById('fbShare').setAttribute("data-href", loadImage)
+   // document.getElementById('lineShare').setAttribute("data-url", loadImage)
   console.log(loadImage)
     document.getElementById('userPic').src = loadImage;
-  
+    LineIt.loadButton();
 
     // openWindow call
     document.getElementById('openwindowbutton').addEventListener('click', function () {
