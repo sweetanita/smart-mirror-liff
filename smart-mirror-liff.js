@@ -41,7 +41,7 @@ window.onload = function (e) {
             alert("Processing Image...");
           }
           else if (received_msg.includes(".jpg")) {
-            location.href = "edit.html?userPic=" + received_msg;
+            location.href = "edit.html?userPic=" + received_msg + "&ngrok=" + nPath;
             // location.href = "https://line-objects-dev.com/filedump/pics/" + received_msg;
           }
        };
