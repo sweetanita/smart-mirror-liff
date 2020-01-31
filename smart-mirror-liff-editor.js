@@ -3,6 +3,10 @@ window.onload = function (e) {
     // liff.init(function (data) {
     //     initializeApp(data);
     // });
+  var url_string = window.location.href
+  var url = new URL(url_string);
+  var nPath = url.searchParams.get("ngrok");
+  var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
     liff
         .init({
             liffId: myLiffId
@@ -16,7 +20,7 @@ window.onload = function (e) {
             // document.getElementById("liffInitErrorMessage").classList.remove('hidden');
         });
     if ("WebSocket" in window) {
-        var wsURL = "wss://9cf98b5a.ngrok.io?user=1"
+        var wsURL = socketURL
        // alert("WebSocket is supported by your Browser!");
        
        // Let us open a web socket
