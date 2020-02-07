@@ -1,5 +1,6 @@
 window.onload = function (e) {
     var myLiffId = '1653359134-GD2RKWnj'
+    
     // liff.init(function (data) {
     //     initializeApp(data);
     // });

@@ -125,6 +125,7 @@ function initializeApp(data) {
   var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
 
   var divLINE = document.createElement('div');
+  var lowerdiv = document.getElementById("lowerdiv")
 // divLINE.textContent = "Sup, y'all?";
 divLINE.setAttribute('class', 'line-it-button');
 divLINE.setAttribute('data-lang', 'en');
@@ -138,11 +139,12 @@ divLINE.style.width = "10%";
 divLINE.style.height = "10%";
 divLINE.style.display = "none";
 
-// document.body.appendChild(divLINE);
+lowerdiv.appendChild(divLINE);
 
 
 var divFBroot = document.createElement('div');
 divFBroot.setAttribute('id', 'fb-root');
+divFBroot.setAttribute('style', '\"position: relative; text-align: center;\"');
 
 var divFB = document.createElement('div');
 // divFB.textContent = "Share";
@@ -151,14 +153,16 @@ divFB.setAttribute('data-href', loadImage);
 divFB.setAttribute('data-layout', 'button');
 divFB.setAttribute('data-size', 'large');
 
+
 var aFB = document.createElement('a');
 aFB.textContent = "Share";
 aFB.setAttribute('target', '_blank');
 aFB.setAttribute('href', loadImage);
 aFB.setAttribute('class', 'fb-xfbml-parse-ignore');
 divFB.appendChild(aFB);
-// document.body.appendChild(divFBroot);
-// document.body.appendChild(divFB);
+
+lowerdiv.appendChild(divFBroot);
+lowerdiv.appendChild(divFB);
 
    // document.getElementById('fbShare').href = "https://www.facebook.com/sharer/sharer.php?src=sdkpreparse&amp;u=" + loadImage
    // document.getElementById('fbShare').setAttribute("data-href", loadImage)
