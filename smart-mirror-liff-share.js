@@ -53,59 +53,8 @@ window.onload = function (e) {
           alert("Connection is closed..."); 
        };
            //SMART MIRROR
-        document.getElementById('shutterbutton').addEventListener('click', function () {
-            ws.binaryType = 'arraybuffer';
-            ws.send(new Uint8Array([55]));
-            document.getElementById('shutterbutton').disabled = true;
-            window.alert("Processing Image. Please wait.")
-            document.body.style.filter = 'grayscale(1)';
-        });
 
-            document.getElementById("frame-icon").onclick = function() {
-      document.getElementById("subfooter").style.display = "block"
-      document.getElementById('frame-icon').src = "assets/pics/frame_icon_select.svg";
-      document.getElementById('sticker-icon').src = "assets/pics/sticker_icon.svg";
-    }
-
-    document.getElementById("sticker-icon").onclick = function() {
-      document.getElementById("subfooter").style.display = "block"
-      document.getElementById('frame-icon').src = "assets/pics/frame_icon.svg";
-      document.getElementById('sticker-icon').src = "assets/pics/sticker_icon_select.svg";
-    }
-
-    document.getElementById("retake-icon").onclick = function() {
-    //your code here
-      ws.send("retake");
-      window.location.href = "index.html"
-    }
-
-    document.getElementById("submit-icon").onclick = function() {
-      imgOptions = getImgOptions();
-      ws.send(imgOptions);
-      window.location.href = "share.html"
-    //your code here
-    }
-
-    document.getElementById("frame1").onclick = function() {
-      addFrame(1);
-      ws.send("frame1");
-    }
-    document.getElementById("frame2").onclick = function() {
-      addFrame(2);
-      ws.send("frame2");
-    }
-    document.getElementById("frame3").onclick = function() {
-      addFrame(3);
-      ws.send("frame3");
-    }
-    document.getElementById("frame4").onclick = function() {
-      addFrame(4);
-      ws.send("frame4");
-    }
-    document.getElementById("frame5").onclick = function() {
-      addFrame(5);
-      ws.send("frame5");
-    }
+    
 
         // document.getElementById('pingbutton').addEventListener('click', function () {
         //     ws.send("Ping");

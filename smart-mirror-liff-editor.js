@@ -53,13 +53,13 @@ window.onload = function (e) {
           alert("Connection is closed..."); 
        };
            //SMART MIRROR
-        document.getElementById('shutterbutton').addEventListener('click', function () {
-            ws.binaryType = 'arraybuffer';
-            ws.send(new Uint8Array([55]));
-            document.getElementById('shutterbutton').disabled = true;
-            window.alert("Processing Image. Please wait.")
-            document.body.style.filter = 'grayscale(1)';
-        });
+        // document.getElementById('shutterbutton').addEventListener('click', function () {
+        //     ws.binaryType = 'arraybuffer';
+        //     ws.send(new Uint8Array([55]));
+        //     document.getElementById('shutterbutton').disabled = true;
+        //     window.alert("Processing Image. Please wait.")
+        //     document.body.style.filter = 'grayscale(1)';
+        // });
 
             document.getElementById("frame-icon").onclick = function() {
       document.getElementById("subfooter").style.display = "block"
