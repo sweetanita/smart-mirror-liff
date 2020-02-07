@@ -75,14 +75,18 @@ window.onload = function (e) {
 
     document.getElementById("retake-icon").onclick = function() {
     //your code here
-      ws.send("retake");
-      window.location.href = "index.html"
+      // ws.send("retake");
+      location.href = "index.html"
     }
 
     document.getElementById("submit-icon").onclick = function() {
-      imgOptions = getImgOptions();
-      ws.send(imgOptions);
-      window.location.href = "share.html"
+      // imgOptions = getImgOptions();
+      // ws.send(imgOptions);
+      var url_string = window.location.href
+    var url = new URL(url_string);
+    var pPath = url.searchParams.get("userPic");
+    // var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
+      location.href = "share.html?userPic="+pPath;
     //your code here
     }
 
