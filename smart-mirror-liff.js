@@ -72,6 +72,10 @@ window.onload = function (e) {
     }
 };
 
+function skipCamera(testFile) {
+    location.href = "edit.html?userPic=" + testFile + "&ngrok=" + nPath;
+}
+
 function initializeApp(data) {
   
 
