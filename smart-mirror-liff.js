@@ -1,9 +1,9 @@
 window.onload = function (e) {
     var myLiffId = '1653359134-GD2RKWnj'
     
-    // liff.init(function (data) {
-    //     initializeApp(data);
-    // });
+    liff.init(function (data) {
+        initializeApp(data);
+    });
     var url_string = window.location.href
     var url = new URL(url_string);
     var nPath = url.searchParams.get("ngrok");
