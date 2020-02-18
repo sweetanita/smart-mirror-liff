@@ -1,9 +1,9 @@
 window.onload = function (e) {
     var myLiffId = '1653359134-GD2RKWnj'
     
-    liff.init(function (data) {
-        initializeApp(data);
-    });
+    // liff.init(function (data) {
+    //     initializeApp(data);
+    // });
     var url_string = window.location.href
     var url = new URL(url_string);
     var nPath = url.searchParams.get("ngrok");
@@ -31,7 +31,7 @@ window.onload = function (e) {
           
           // Web Socket is connected, send data using send()
           ws.send("Connected");
-          document.getElementById('shutterbutton').style.display = "block"
+          document.getElementById('shutterbutton').style.display = "flex"
           // alert("Message is sent...");
        };
         
@@ -56,9 +56,16 @@ window.onload = function (e) {
         document.getElementById('shutterbutton').addEventListener('click', function () {
             ws.binaryType = 'arraybuffer';
             ws.send(new Uint8Array([55]));
+            document.getElementById('shutterbutton').style.display = "none"
             document.getElementById('shutterbutton').disabled = true;
-            window.alert("Smile!")
-            document.body.style.filter = 'grayscale(1)';
+            document.getElementById('look-mirror').style = "height: 50%"
+            document.getElementById('look-mirror').style.display = "flex"
+            document.getElementById('look-mirror').classList.add("center-center")
+            document.getElementById('look-text').style.width = "100%"
+            // document.getElementById('look-text').style.transform = "translate(1%,1%)";
+
+            // window.alert("Smile!")
+            // document.body.style.filter = 'grayscale(1)';
         });
 
         // document.getElementById('pingbutton').addEventListener('click', function () {
@@ -78,7 +85,6 @@ function skipCamera(testFile) {
 
 function initializeApp(data) {
   
-
     // openWindow call
     document.getElementById('openwindowbutton').addEventListener('click', function () {
         liff.openWindow({

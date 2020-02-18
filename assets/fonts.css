@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'mkm-default';
+  src: url('./fonts/SukhumvitTadmai/SukhumvitTadmai_Med.otf');
+  font-weight: 500;
+  unicode-range: U+0E00-0E7F;
+}
+
+@font-face {
+  font-family: 'mkm-default';
+  src: url('./fonts/SukhumvitTadmai/SukhumvitTadmai_SeBold.otf');
+  font-weight: 600;
+  unicode-range: U+0E00-0E7F;
+}
+
+@font-face {
+  font-family: 'mkm-default';
+  src: url('./fonts/SukhumvitTadmai/SukhumvitTadmai_Bol.otf');
+  font-weight: 700;
+  unicode-range: U+0E00-0E7F;
+}
+
+@font-face {
+  font-family: 'volte-default';
+  src: url('./fonts/Volte/Volte.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'volte-default';
+  src: url('./fonts/Volte/Volte-Semibold.otf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'volte-default';
+  src: url('./fonts/Volte/Volte-Bold.otf');
+  font-weight: 700;
+}
