@@ -62,13 +62,15 @@ window.onload = function (e) {
         // });
 
             document.getElementById("frame-icon").onclick = function() {
-      document.getElementById("subfooter").style.display = "block"
+      document.getElementById("subfooter-frame").style.display = "block"
+      document.getElementById("subfooter-icon").style.display = "none"
       document.getElementById('frame-icon').src = "assets/pics/frame_icon_select.svg";
       document.getElementById('sticker-icon').src = "assets/pics/sticker_icon.svg";
     }
 
     document.getElementById("sticker-icon").onclick = function() {
-      document.getElementById("subfooter").style.display = "block"
+      document.getElementById("subfooter-icon").style.display = "block"
+      document.getElementById("subfooter-frame").style.display = "none"
       document.getElementById('frame-icon').src = "assets/pics/frame_icon.svg";
       document.getElementById('sticker-icon').src = "assets/pics/sticker_icon_select.svg";
     }
@@ -110,6 +112,65 @@ window.onload = function (e) {
       addFrame(5);
       ws.send("frame5");
     }
+
+    for(let i = 1; i < 26; i++ ) {
+      document.getElementById("icon"+i).onclick = function() {
+        if (document.getElementById("icon"+i+"-sticker").style.display == "inline") {
+          document.getElementById("icon"+i+"-sticker").style.display = "none"
+        }
+        else {
+          document.getElementById("icon"+i+"-sticker").style.display = "inline"
+          document.getElementById("icon"+i+"-sticker").position = document.getElementById("userPic").position()
+        }
+      }
+    }
+
+    // Make the DIV element draggable:
+    for(let i = 1; i < 26; i++ ) {
+      dragElement(document.getElementById("icon"+i+"-sticker"));
+    }
+
+
+      function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+          // if present, the header is where you move the DIV from:
+          document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+          // otherwise, move the DIV from anywhere inside the DIV:
+          elmnt.ontouchstart = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // get the mouse cursor position at startup:
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          document.ontouchend = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.ontouchmove = elementDrag;
+        }
+
+        function elementDrag(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // calculate the new cursor position:
+          pos1 = pos3 - e.clientX;
+          pos2 = pos4 - e.clientY;
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+          // stop moving when mouse button is released:
+          document.ontouchend = null;
+          document.ontouchmove = null;
+        }
+      }
 
         // document.getElementById('pingbutton').addEventListener('click', function () {
         //     ws.send("Ping");
@@ -233,7 +294,7 @@ divFB.appendChild(aFB);
 
 function addFrame(frame_no) {
   window.frameno = frame_no
-    document.getElementById("framePic").src = "assets/pics/frame"+frame_no+".svg"
+    document.getElementById("framePic").src = "assets/pics/frame"+frame_no+"-head.png"
 }
 
 function toggleAccessToken() {
