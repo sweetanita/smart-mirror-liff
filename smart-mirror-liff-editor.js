@@ -17,8 +17,8 @@ window.onload = function (e) {
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
 
-  console.log("v1")
-  
+  console.log("v1.2")
+
     liff
         .init({
             liffId: myLiffId
@@ -167,7 +167,7 @@ window.onload = function (e) {
             initialX = e.clientX - xOffset;
             initialY = e.clientY - yOffset;
           }
-
+          var dragItem = document.querySelector(elmnt.id);
           if (e.target === dragItem) {
             active = true;
           }
