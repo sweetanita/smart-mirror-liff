@@ -98,6 +98,11 @@ window.onload = function (e) {
       var url_string = window.location.href
     var url = new URL(url_string);
     var pPath = url.searchParams.get("userPic");
+    liff.getProfile().then((data) => {
+      let message = 'submit,'+ data.userId + ',' + pPath
+      ws.send(message);
+    })
+    
     // var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
       location.href = "share.html?userPic="+pPath;
     //your code here
