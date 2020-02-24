@@ -54,7 +54,7 @@ window.onload = function (e) {
           }
           else if (received_msg.includes(".jpg")) {
             location.href = "edit.html?p=" + received_msg;
-            // location.href = "https://line-objects-dev.com/filedump/pics/" + received_msg;
+            // location.href = "https://vos.line-scdn.net/line-town-cms-external/shots/pics/" + received_msg;
           }
        };
         
@@ -98,7 +98,7 @@ window.onload = function (e) {
       var url_string = window.location.href
     var url = new URL(url_string);
     var pPath = url.searchParams.get("userPic");
-    var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
+    var loadImage = "https://vos.line-scdn.net/line-town-cms-external/shots/pics/" + pPath;
     liff.getProfile().then((data) => {
       let message = 'submit,'+ data.userId + ',' + loadImage
       ws.send(message);
@@ -108,7 +108,7 @@ window.onload = function (e) {
     })
     
 
-    // var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
+    // var loadImage = "https://vos.line-scdn.net/line-town-cms-external/shots/pics/" + pPath;
       // location.href = "share.html?userPic="+pPath;
     //your code here
     }
@@ -256,7 +256,7 @@ function initializeApp(data) {
   var url_string = window.location.href
   var url = new URL(url_string);
   var pPath = url.searchParams.get("userPic");
-  var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
+  var loadImage = "https://vos.line-scdn.net/line-town-cms-external/shots/pics/" + pPath;
   // var loadImage = "https://vos.line-scdn.net/line-town-cms-external/shots/" + pPath;
   https://vos.line-scdn.net/line-town-cms-external/told.html
 
