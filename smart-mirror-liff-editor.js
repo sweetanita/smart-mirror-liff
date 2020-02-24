@@ -1,9 +1,9 @@
 window.onload = function (e) {
     var myLiffId = '1653359134-GD2RKWnj'
     // initializeApp(0 );
-    liff.init(function (data) {
-        initializeApp(data);
-    });
+    // liff.init(function (data) {
+    //     initializeApp(data);
+    // });
     var active = false;
   var currentX;
   var currentY;
@@ -17,7 +17,7 @@ window.onload = function (e) {
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
 
-  console.log("v1.5")
+  console.log("v1.6")
 
     liff
         .init({
@@ -98,6 +98,7 @@ window.onload = function (e) {
       var url_string = window.location.href
     var url = new URL(url_string);
     var pPath = url.searchParams.get("userPic");
+    var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
     liff.getProfile().then((data) => {
       let message = 'submit,'+ data.userId + ',' + loadImage
       ws.send(message);
