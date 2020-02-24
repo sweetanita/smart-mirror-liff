@@ -17,7 +17,7 @@ window.onload = function (e) {
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
 
-  console.log("v1.4")
+  console.log("v1.5")
 
     liff
         .init({
@@ -101,11 +101,12 @@ window.onload = function (e) {
     liff.getProfile().then((data) => {
       let message = 'submit,'+ data.userId + ',' + loadImage
       ws.send(message);
+      setTimeout(function(){
+        liff.closeWindow();
+      }, 1000)
     })
     
-    setTimeout(function(){
-      liff.closeWindow();
-    }, 1000)
+
     // var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
       // location.href = "share.html?userPic="+pPath;
     //your code here
