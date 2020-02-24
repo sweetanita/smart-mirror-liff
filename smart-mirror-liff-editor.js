@@ -17,7 +17,7 @@ window.onload = function (e) {
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
 
-  console.log("v1.8")
+  console.log("v1.9")
 
     liff
         .init({
@@ -136,11 +136,13 @@ window.onload = function (e) {
 
     for(let i = 1; i < 26; i++ ) {
       document.getElementById("icon"+i).onclick = function() {
+        console.log(document.getElementById("icon"+i+"-sticker").style.display)
         if (document.getElementById("icon"+i+"-sticker").style.display == "flex") {
           document.getElementById("icon"+i+"-sticker").style.display = "none"
         }
         else {
           document.getElementById("icon"+i+"-sticker").style.display = "flex"
+           document.getElementById("icon"+i+"-sticker").style = "position:fixed; top: 50%;left: 50%;"
           // document.getElementById("icon"+i+"-sticker").position = document.getElementById("userPic").position()
         }
       }
@@ -148,7 +150,8 @@ window.onload = function (e) {
 
     // Make the DIV element draggable:
     for(let i = 1; i < 26; i++ ) {
-      dragElement(document.getElementById("icon"+i+"-sticker"));
+      $('#icon'+i+'-sticker').draggable()
+      // document.getElementById("icon"+i+"-sticker").draggable();
     }
 
 
