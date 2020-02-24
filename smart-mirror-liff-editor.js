@@ -4,10 +4,21 @@ window.onload = function (e) {
     liff.init(function (data) {
         initializeApp(data);
     });
+    var active = false;
+  var currentX;
+  var currentY;
+  var initialX;
+  var initialY;
+  var xOffset = 0;
+  var yOffset = 0;
+
   var url_string = window.location.href
   var url = new URL(url_string);
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
+
+  console.log("v1")
+  
     liff
         .init({
             liffId: myLiffId
@@ -115,11 +126,11 @@ window.onload = function (e) {
 
     for(let i = 1; i < 26; i++ ) {
       document.getElementById("icon"+i).onclick = function() {
-        if (document.getElementById("icon"+i+"-sticker").style.display == "inline") {
+        if (document.getElementById("icon"+i+"-sticker").style.display == "flex") {
           document.getElementById("icon"+i+"-sticker").style.display = "none"
         }
         else {
-          document.getElementById("icon"+i+"-sticker").style.display = "inline"
+          document.getElementById("icon"+i+"-sticker").style.display = "flex"
           document.getElementById("icon"+i+"-sticker").position = document.getElementById("userPic").position()
         }
       }
@@ -138,7 +149,55 @@ window.onload = function (e) {
           document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
         } else {
           // otherwise, move the DIV from anywhere inside the DIV:
-          elmnt.ontouchstart = dragMouseDown;
+          // elmnt.ontouchstart = dragMouseDown;
+          elmnt.addEventListener("touchstart", dragStart, false);
+          elmnt.addEventListener("touchend", dragEnd, false);
+          elmnt.addEventListener("touchmove", drag, false);
+
+          elmnt.addEventListener("mousedown", dragStart, false);
+          elmnt.addEventListener("mouseup", dragEnd, false);
+          elmnt.addEventListener("mousemove", drag, false);
+        }
+
+        function dragStart(e) {
+          if (e.type === "touchstart") {
+            initialX = e.touches[0].clientX - xOffset;
+            initialY = e.touches[0].clientY - yOffset;
+          } else {
+            initialX = e.clientX - xOffset;
+            initialY = e.clientY - yOffset;
+          }
+
+          if (e.target === dragItem) {
+            active = true;
+          }
+        }
+
+        function dragEnd(e) {
+          initialX = currentX;
+          initialY = currentY;
+
+          active = false;
+        }
+
+        function drag(e) {
+          if (active) {
+          
+            e.preventDefault();
+          
+            if (e.type === "touchmove") {
+              currentX = e.touches[0].clientX - initialX;
+              currentY = e.touches[0].clientY - initialY;
+            } else {
+              currentX = e.clientX - initialX;
+              currentY = e.clientY - initialY;
+            }
+
+            xOffset = currentX;
+            yOffset = currentY;
+
+            setTranslate(currentX, currentY, dragItem);
+          }
         }
 
         function dragMouseDown(e) {
@@ -188,6 +247,8 @@ function initializeApp(data) {
   var url = new URL(url_string);
   var pPath = url.searchParams.get("userPic");
   var loadImage = "https://line-objects-dev.com/filedump/pics/" + pPath;
+  // var loadImage = "https://vos.line-scdn.net/line-town-cms-external/shots/" + pPath;
+  https://vos.line-scdn.net/line-town-cms-external/told.html
 
   var divLINE = document.createElement('div');
 // divLINE.textContent = "Sup, y'all?";
