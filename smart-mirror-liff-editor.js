@@ -17,7 +17,7 @@ window.onload = function (e) {
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
 
-  console.log("v1.6")
+  console.log("v1.8")
 
     liff
         .init({
