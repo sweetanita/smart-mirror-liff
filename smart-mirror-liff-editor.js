@@ -17,7 +17,7 @@ window.onload = function (e) {
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
 
-  console.log("v1.2")
+  console.log("v1.3")
 
     liff
         .init({
@@ -131,7 +131,7 @@ window.onload = function (e) {
         }
         else {
           document.getElementById("icon"+i+"-sticker").style.display = "flex"
-          document.getElementById("icon"+i+"-sticker").position = document.getElementById("userPic").position()
+          // document.getElementById("icon"+i+"-sticker").position = document.getElementById("userPic").position()
         }
       }
     }
