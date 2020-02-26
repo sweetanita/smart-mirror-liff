@@ -19,6 +19,10 @@ window.onload = function (e) {
 
   console.log("v1.12")
 
+  var $draggable = $('.draggable').draggabilly({
+    // options...
+  })
+
     liff
         .init({
             liffId: myLiffId
@@ -143,17 +147,17 @@ window.onload = function (e) {
         else {
           // document.getElementById("icon"+i+"-sticker").style.display = "flex"
            document.getElementById("icon"+i+"-sticker").style = "position:fixed; top: 50%;left: 50%;"
-           $('#icon'+i+'-sticker').draggable()
+           // $('#icon'+i+'-sticker').draggable()
           // document.getElementById("icon"+i+"-sticker").position = document.getElementById("userPic").position()
         }
       }
     }
 
     // Make the DIV element draggable:
-    for(let i = 1; i < 26; i++ ) {
-      $('#icon'+i+'-sticker').draggable()
+    // for(let i = 1; i < 26; i++ ) {
+      // $('#icon'+i+'-sticker').draggable()
       // document.getElementById("icon"+i+"-sticker").draggable();
-    }
+    // }
 
 
       function dragElement(elmnt) {

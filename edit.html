@@ -9,13 +9,15 @@
 
       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+            <!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script> -->
+<!-- <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 
-<script src="jquery.ui.touch-punch.min.js"></script>
+<!-- <script src="jquery.ui.touch-punch.min.js"></script> -->
+<script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+
           <link rel="stylesheet" href="style.css">
 
 </head>
@@ -30,31 +32,31 @@
     <div id="userFrame" style="height:50%; position: relative;">
       <img id="framePic" src="assets/pics/frame1-head.png" class="userPic "vertical-center common" style="margin-left: 15%; max-width: 70%;"></img>
        <img id="userPic" src="" class="userPic  common" style="position:relative; margin-left: 15%; display: flex"></img>
-          <img src="assets/pics/icon1.svg" class="sticker-move" id="icon1-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon2.svg" class="sticker-move" id="icon2-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon3.svg" class="sticker-move" id="icon3-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon4.svg" class="sticker-move" id="icon4-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon5.svg" class="sticker-move" id="icon5-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon6.svg" class="sticker-move" id="icon6-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon7.svg" class="sticker-move" id="icon7-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon8.svg" class="sticker-move" id="icon8-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon9.svg" class="sticker-move" id="icon9-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon10.svg" class="sticker-move" id="icon10-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon11.svg" class="sticker-move" id="icon11-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon12.svg" class="sticker-move" id="icon12-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon13.svg" class="sticker-move" id="icon13-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon14.svg" class="sticker-move" id="icon14-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon15.svg" class="sticker-move" id="icon15-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon16.svg" class="sticker-move" id="icon16-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon17.svg" class="sticker-move" id="icon17-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon18.svg" class="sticker-move" id="icon18-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon19.svg" class="sticker-move" id="icon19-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon20.svg" class="sticker-move" id="icon20-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon21.svg" class="sticker-move" id="icon21-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon22.svg" class="sticker-move" id="icon22-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon23.svg" class="sticker-move" id="icon23-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon24.svg" class="sticker-move" id="icon24-sticker" style="display: none; touch-action: none">
-          <img src="assets/pics/icon25.svg" class="sticker-move" id="icon25-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon1.svg" class="sticker-move draggable" id="icon1-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon2.svg" class="sticker-move draggable" id="icon2-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon3.svg" class="sticker-move draggable" id="icon3-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon4.svg" class="sticker-move draggable" id="icon4-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon5.svg" class="sticker-move draggable" id="icon5-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon6.svg" class="sticker-move draggable" id="icon6-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon7.svg" class="sticker-move draggable" id="icon7-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon8.svg" class="sticker-move draggable" id="icon8-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon9.svg" class="sticker-move draggable" id="icon9-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon10.svg" class="sticker-move draggable" id="icon10-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon11.svg" class="sticker-move draggable" id="icon11-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon12.svg" class="sticker-move draggable" id="icon12-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon13.svg" class="sticker-move draggable" id="icon13-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon14.svg" class="sticker-move draggable" id="icon14-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon15.svg" class="sticker-move draggable" id="icon15-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon16.svg" class="sticker-move draggable" id="icon16-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon17.svg" class="sticker-move draggable" id="icon17-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon18.svg" class="sticker-move draggable" id="icon18-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon19.svg" class="sticker-move draggable" id="icon19-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon20.svg" class="sticker-move draggable" id="icon20-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon21.svg" class="sticker-move draggable" id="icon21-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon22.svg" class="sticker-move draggable" id="icon22-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon23.svg" class="sticker-move draggable" id="icon23-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon24.svg" class="sticker-move draggable" id="icon24-sticker" style="display: none; touch-action: none">
+          <img src="assets/pics/icon25.svg" class="sticker-move draggable" id="icon25-sticker" style="display: none; touch-action: none">
     </div>
     <!-- <button id="lineShare" class="btn btn-success btn-lg" style="display: none;">LINE</button> -->
     <!-- <button id="fbShare" class="btn btn-primary btn-lg" style="display: none;">Facebook</button> -->
