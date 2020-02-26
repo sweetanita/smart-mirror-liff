@@ -17,7 +17,7 @@ window.onload = function (e) {
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
 
-  console.log("v1.9")
+  console.log("v1.11")
 
     liff
         .init({
@@ -88,7 +88,7 @@ window.onload = function (e) {
 
     document.getElementById("retake-icon").onclick = function() {
     //your code here
-      // ws.send("retake");
+      ws.send("retake");
       location.href = "index.html"
     }
 
@@ -137,12 +137,13 @@ window.onload = function (e) {
     for(let i = 1; i < 26; i++ ) {
       document.getElementById("icon"+i).onclick = function() {
         console.log(document.getElementById("icon"+i+"-sticker").style.display)
-        if (document.getElementById("icon"+i+"-sticker").style.display == "flex") {
+        if (document.getElementById("icon"+i+"-sticker").style.display != "none") {
           document.getElementById("icon"+i+"-sticker").style.display = "none"
         }
         else {
-          document.getElementById("icon"+i+"-sticker").style.display = "flex"
+          // document.getElementById("icon"+i+"-sticker").style.display = "flex"
            document.getElementById("icon"+i+"-sticker").style = "position:fixed; top: 50%;left: 50%;"
+           $('#icon'+i+'-sticker').draggable()
           // document.getElementById("icon"+i+"-sticker").position = document.getElementById("userPic").position()
         }
       }
@@ -261,7 +262,7 @@ function initializeApp(data) {
   var pPath = url.searchParams.get("userPic");
   var loadImage = "https://vos.line-scdn.net/line-town-cms-external/shots/pics/" + pPath;
   // var loadImage = "https://vos.line-scdn.net/line-town-cms-external/shots/" + pPath;
-  https://vos.line-scdn.net/line-town-cms-external/told.html
+  // https://vos.line-scdn.net/line-town-cms-external/told.html
 
   var divLINE = document.createElement('div');
 // divLINE.textContent = "Sup, y'all?";
