@@ -16,11 +16,11 @@ window.onload = function (e) {
   var url = new URL(url_string);
   var nPath = url.searchParams.get("ngrok");
   var socketURL = "wss://" + nPath + ".ngrok.io?user=1"
-
-  console.log("v1.12")
+  window.frameno = 1;
+  console.log("v1.14")
 
   var $draggable = $('.draggable').draggabilly({
-    // options...
+    containment: '#userFrame'
   })
 
     liff
@@ -103,8 +103,10 @@ window.onload = function (e) {
     var url = new URL(url_string);
     var pPath = url.searchParams.get("userPic");
     var loadImage = "https://vos.line-scdn.net/line-town-cms-external/shots/pics/" + pPath;
+    // let message = 'submit,'+ "placeholder" + ',' + loadImage + ',' + window.frameno
+    // ws.send(message);
     liff.getProfile().then((data) => {
-      let message = 'submit,'+ data.userId + ',' + loadImage
+      let message = 'submit,'+ data.userId + ',' + loadImage + ',' + window.frameno
       ws.send(message);
       setTimeout(function(){
         liff.closeWindow();
@@ -142,11 +144,15 @@ window.onload = function (e) {
       document.getElementById("icon"+i).onclick = function() {
         console.log(document.getElementById("icon"+i+"-sticker").style.display)
         if (document.getElementById("icon"+i+"-sticker").style.display != "none") {
+          document.getElementById("icon"+i+"-sticker").classList.remove('draggable');
           document.getElementById("icon"+i+"-sticker").style.display = "none"
         }
         else {
-          // document.getElementById("icon"+i+"-sticker").style.display = "flex"
-           document.getElementById("icon"+i+"-sticker").style = "position:fixed; top: 50%;left: 50%;"
+          
+           // document.getElementById("icon"+i+"-sticker").style = "top: 50%;left: 50%;"
+           document.getElementById("icon"+i+"-sticker").style.display = "block"
+           // document.getElementById("icon"+i+"-sticker").style = ""
+           document.getElementById("icon"+i+"-sticker").classList.add('draggable');
            // $('#icon'+i+'-sticker').draggable()
           // document.getElementById("icon"+i+"-sticker").position = document.getElementById("userPic").position()
         }
